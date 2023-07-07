@@ -63,10 +63,11 @@ frogArray.map((listItem) => {
     let listDiv = document.createElement('div');
     listDiv.innerHTML = `
     <div class='container'>
+    <div class='border'>
     <li><h3>${listItem.namnSv}</h3>
     <h4>${listItem.namnLat}</h4>
-    <h5>Egenskaper: ${listItem.egenskaper[0]}</br>${listItem.egenskaper[1]}</h5>
     </li>
+    </div>
     </div>
     `;
     document.querySelector('ul').appendChild(listDiv);
