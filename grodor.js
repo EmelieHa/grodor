@@ -73,3 +73,13 @@ frogArray.map((listItem) => {
     document.querySelector('ul').appendChild(listDiv);
   })
 
+  const lis = document.querySelectorAll('li');
+lis.forEach(l => {
+    l.addEventListener('click', highlightFunc)
+})
+
+function highlightFunc(event) {
+   
+}
+ 
+

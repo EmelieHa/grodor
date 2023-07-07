@@ -98,3 +98,9 @@ li:hover {
     cursor: pointer;
     background: mediumslateblue
 }
+
+.highlight {
+    width: 500px;
+    height: 500px;
+    z-index: 2;
+}
