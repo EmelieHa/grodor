@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(45deg, mediumseagreen, lightblue)
+}
+
+header {
+    background: linear-gradient(90deg, mediumspringgreen, darkblue);
+    border-bottom: solid 3px lightgrey;
+    width: 75%;
+    text-align: center;
+    margin: auto;
+  
+}
+
+h1 {
+    font-size: 65px;
+    font-family: Cochin;
+    letter-spacing: 4px;
+    font-style: italic;
+    color: lightgrey;
+    
+}
+
+h2 {
+    font-size: 25px;
+    font-family: Calibri;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: darkgrey;
+
+}
+
+h3 {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 5px;
+    font-style: italic;
+    text-decoration: underline;
+    color: darkmagenta
+}
+
+h4 {
+    font-size: 17px;
+    font-family: Tahoma;
+    font-weight: bold;
+    color: darkmagenta
+}
+
+h5 {
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkgoldenrod
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    border: solid 3px green;
+    padding: 10px;
+    margin: 10px;
+}
+
+.content {
+    border-left: solid 6px darkgreen;
+    border-right: solid 6px darkgreen;
+    width: 80%;
+    margin:auto;
+    height: 100%;
+    columns: 2;
+}
+
+.pic {
+    height: 150px;
+    width: 200px;
+   
+}
