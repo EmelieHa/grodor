@@ -130,3 +130,9 @@ li:hover {
 #close:hover {
     cursor: pointer;
 }
+
+.title {
+    font-size: 20px;
+    color: darkorange;
+    font-style: italic;
+}

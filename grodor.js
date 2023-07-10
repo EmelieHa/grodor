@@ -78,9 +78,9 @@ frogArray.filter(el => {
       const highlightDiv = document.createElement('div');
       highlightDiv.classList.add('highlight');
       highlightDiv.innerHTML = `
-      <h3>${el.namnSv}</h3>
-      <h4>${el.namnLat}</h4>
-      <p>Egenskaper: ${qualities}</p>
+      <p class='title'>Svenskt namn: </p><h3>${el.namnSv}</h3>
+      <p class='title'>Latinskt namn: </p><h4>${el.namnLat}</h4>
+      <p class='title'>Egenskaper: </p><p>${qualities}</p>
       <button id='close'>Stäng</button>
       `
       document.querySelector('.content').append(highlightDiv);
