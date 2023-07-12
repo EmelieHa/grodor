@@ -114,10 +114,8 @@ li:hover {
     padding: 50px 0
 }
 
-#close {
-    position: absolute;
-    top: 10%;
-    right: 10%;
+button {
+   
     background-color: green;
     color: white;
     border-radius: 10%;
@@ -127,7 +125,19 @@ li:hover {
     font-size: 18px;
 }
 
-#close:hover {
+#close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+#favorite {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+button:hover {
     cursor: pointer;
 }
 

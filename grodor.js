@@ -81,11 +81,16 @@ frogArray.filter(el => {
       <p class='title'>Svenskt namn: </p><h3>${el.namnSv}</h3>
       <p class='title'>Latinskt namn: </p><h4>${el.namnLat}</h4>
       <p class='title'>Egenskaper: </p><p>${qualities}</p>
+      <button id='favorite'>Favorit</button>
       <button id='close'>Stäng</button>
       `
-      document.querySelector('.content').append(highlightDiv);
+      document.querySelector('.box').append(highlightDiv);
+      document.querySelector('.content').style.opacity = 0.5;
       document.getElementById('close').addEventListener('click', () => {
 document.querySelector('.highlight').remove();
+document.getElementById('favorite').addEventListener('click', () => {
+    event.currentTarget
+})
       })
     }
 })
