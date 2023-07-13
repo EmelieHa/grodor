@@ -70,13 +70,13 @@ lis.forEach(l => {
 })
 
 function highlightFunc (event) {
-const parent = event.currentTarget;
-const child = parent.firstChild.textContent;
-frogArray.filter(el => {
+  const parent = event.currentTarget
+  const child = parent.firstChild.textContent
+  frogArray.filter(el => {
     if (el.namnSv === child) {
-        const qualities = el.egenskaper.join('. ');
-      const highlightDiv = document.createElement('div');
-      highlightDiv.classList.add('highlight');
+      const qualities = el.egenskaper.join('. ')
+      const highlightDiv = document.createElement('div')
+      highlightDiv.classList.add('highlight')
       highlightDiv.innerHTML = `
       <p class='title'>Svenskt namn: </p><h3>${el.namnSv}</h3>
       <p class='title'>Latinskt namn: </p><h4>${el.namnLat}</h4>
@@ -84,14 +84,17 @@ frogArray.filter(el => {
       <button id='favorite'>Favorit</button>
       <button id='close'>Stäng</button>
       `
-      document.querySelector('.box').append(highlightDiv);
-      document.querySelector('.content').style.opacity = 0.5;
+      document.querySelector('.box').append(highlightDiv)
+      document.querySelector('.content').style.opacity = 0.5
       document.getElementById('close').addEventListener('click', () => {
-document.querySelector('.highlight').remove();
-document.getElementById('favorite').addEventListener('click', () => {
-    event.currentTarget
-})
+        document.querySelector('.highlight').remove()
+        document.querySelector('.content').style.opacity = 1
+        })
+        document.getElementById('favorite').addEventListener('click', () => {
+          
+            document.querySelector('.highlight').remove()
+            document.querySelector('.content').style.opacity = 1
       })
     }
-})
+  })
 }
