@@ -7,6 +7,17 @@ class Groda {
   }
 }
 
+
+let favoriteFrogsArray = ['Hej', 'Då'];
+  
+const displayList = (arr) => {
+arr.forEach(li => {
+ document.getElementById('favs').innerHTML += `<li>${li}</li>`
+})
+}
+
+displayList(favoriteFrogsArray); 
+
 const frogArray = [
   new Groda(1, 'Klockgroda', 'Bombina bombina', [
     'Trekantig pupill',
@@ -50,6 +61,10 @@ const frogArray = [
   ])
 ]
 
+
+
+
+
 frogArray.map(listItem => {
   let listDiv = document.createElement('div')
   listDiv.innerHTML = `
@@ -81,7 +96,7 @@ function highlightFunc (event) {
       <p class='title'>Svenskt namn: </p><h3>${el.namnSv}</h3>
       <p class='title'>Latinskt namn: </p><h4>${el.namnLat}</h4>
       <p class='title'>Egenskaper: </p><p>${qualities}</p>
-      <button id='favorite'>Favorit</button>
+      <button id='favorite'>Lägg till som favorit</button>
       <button id='close'>Stäng</button>
       `
       document.querySelector('.box').append(highlightDiv)
@@ -89,12 +104,23 @@ function highlightFunc (event) {
       document.getElementById('close').addEventListener('click', () => {
         document.querySelector('.highlight').remove()
         document.querySelector('.content').style.opacity = 1
-        })
-        document.getElementById('favorite').addEventListener('click', () => {
-          
-            document.querySelector('.highlight').remove()
-            document.querySelector('.content').style.opacity = 1
       })
+      document.getElementById('favorite').addEventListener('click', event => {
+
+        if (event.target.firstChild.textContent === 'Ta bort som favorit') {
+          event.target.firstChild.textContent = 'Lägg till som favorit'
+        } else {
+          event.target.firstChild.textContent = 'Ta bort som favorit';
+          const parentDiv = event.target.parentElement;
+          const swedish = parentDiv.querySelector('h3');
+          swedish.classList.add('listClass');
+          document.getElementById('favoriteTitle').append(swedish);
+         
+          }
+        }
+      )
     }
-  })
-}
+})
+  }
+
+
