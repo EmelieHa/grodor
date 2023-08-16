@@ -135,7 +135,7 @@ button {
 
 
 
-.listClass {
+#favs {
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
@@ -151,6 +151,21 @@ button {
     position: absolute;
     top: 10%;
     left: 10%;
+}
+
+.favoriteFrogs {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background: blanchedalmond;
+    border: solid 3px darkblue;
+}
+
+#favoriteTitle {
+    font-size: 30px;
+    font-family: fantasy;
+    color: silver;
+    padding: 10px;
 }
 
 button:hover {

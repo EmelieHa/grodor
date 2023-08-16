@@ -8,7 +8,7 @@ class Groda {
 }
 
 
-let favoriteFrogsArray = ['Hej', 'Då'];
+let favoriteFrogsArray = [];
   
 const displayList = (arr) => {
 arr.forEach(li => {
@@ -16,7 +16,7 @@ arr.forEach(li => {
 })
 }
 
-displayList(favoriteFrogsArray); 
+
 
 const frogArray = [
   new Groda(1, 'Klockgroda', 'Bombina bombina', [
@@ -76,7 +76,7 @@ frogArray.map(listItem => {
     </div>
     </div>
     `
-  document.querySelector('ul').appendChild(listDiv)
+  document.getElementById('listOfFrogs').appendChild(listDiv)
 })
 
 const lis = document.querySelectorAll('li')
@@ -111,11 +111,10 @@ function highlightFunc (event) {
           event.target.firstChild.textContent = 'Lägg till som favorit'
         } else {
           event.target.firstChild.textContent = 'Ta bort som favorit';
-          const parentDiv = event.target.parentElement;
-          const swedish = parentDiv.querySelector('h3');
-          swedish.classList.add('listClass');
-          document.getElementById('favoriteTitle').append(swedish);
-         
+         let parentDiv = event.target.parentElement;
+         let swedishTitle = parentDiv.querySelector('h3');
+         favoriteFrogsArray.push(swedishTitle.textContent)
+         displayList(favoriteFrogsArray);
           }
         }
       )
@@ -123,4 +122,4 @@ function highlightFunc (event) {
 })
   }
 
-
+   
