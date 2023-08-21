@@ -7,16 +7,11 @@ class Groda {
   }
 }
 
+let favoriteFrogsArray = []
 
-let favoriteFrogsArray = [];
-  
-const displayList = (arr) => {
-arr.forEach(li => {
- document.getElementById('favs').innerHTML += `<li>${li}</li>`
-})
+const displayList = arr => {
+  document.getElementById('favs').innerHTML = arr.join(', ')
 }
-
-
 
 const frogArray = [
   new Groda(1, 'Klockgroda', 'Bombina bombina', [
@@ -61,10 +56,6 @@ const frogArray = [
   ])
 ]
 
-
-
-
-
 frogArray.map(listItem => {
   let listDiv = document.createElement('div')
   listDiv.innerHTML = `
@@ -106,20 +97,23 @@ function highlightFunc (event) {
         document.querySelector('.content').style.opacity = 1
       })
       document.getElementById('favorite').addEventListener('click', event => {
-
+        let parentDiv = event.target.parentElement
+        let swedishTitle = parentDiv.querySelector('h3')
         if (event.target.firstChild.textContent === 'Ta bort som favorit') {
           event.target.firstChild.textContent = 'Lägg till som favorit'
-        } else {
-          event.target.firstChild.textContent = 'Ta bort som favorit';
-         let parentDiv = event.target.parentElement;
-         let swedishTitle = parentDiv.querySelector('h3');
-         favoriteFrogsArray.push(swedishTitle.textContent)
-         displayList(favoriteFrogsArray);
+          if (favoriteFrogsArray.includes(swedishTitle.textContent)) {
+            let index = favoriteFrogsArray.indexOf(swedishTitle.textContent);
+            favoriteFrogsArray.splice(index, 1)
+            displayList(favoriteFrogsArray)
           }
-        }
-      )
-    }
-})
-  }
+        } 
+        else {
+          event.target.firstChild.textContent = 'Ta bort som favorit'
 
-   
+          favoriteFrogsArray.push(swedishTitle.textContent)
+          displayList(favoriteFrogsArray)
+        } 
+      })
+    }
+  })
+}

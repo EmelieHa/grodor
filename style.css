@@ -139,6 +139,7 @@ button {
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
+    text-align: left;
 }
 
 #close {
@@ -159,13 +160,15 @@ button {
     left: 5%;
     background: blanchedalmond;
     border: solid 3px darkblue;
+    max-width: 200px;
 }
 
 #favoriteTitle {
     font-size: 30px;
     font-family: fantasy;
     color: silver;
-    padding: 10px;
+    margin: 5px;
+    text-align: center;
 }
 
 button:hover {
