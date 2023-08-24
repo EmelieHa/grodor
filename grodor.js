@@ -100,12 +100,16 @@ function highlightFunc (event) {
         let parentDiv = event.target.parentElement
         let swedishTitle = parentDiv.querySelector('h3')
         if (event.target.firstChild.textContent === 'Ta bort som favorit') {
-          event.target.firstChild.textContent = 'Lägg till som favorit'
-          if (favoriteFrogsArray.includes(swedishTitle.textContent)) {
-            let index = favoriteFrogsArray.indexOf(swedishTitle.textContent);
-            favoriteFrogsArray.splice(index, 1)
+          event.target.firstChild.textContent = 'Lägg till som favorit';
+         
+            favoriteFrogsArray.forEach(el => {
+       while (favoriteFrogsArray.includes(swedishTitle.textContent)) {
+                  let inNum = favoriteFrogsArray.indexOf(el);
+                 favoriteFrogsArray.splice(inNum, 1)
+       }
+          })
             displayList(favoriteFrogsArray)
-          }
+          
         } 
         else {
           event.target.firstChild.textContent = 'Ta bort som favorit'
